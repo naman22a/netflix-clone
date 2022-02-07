@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    background-image: url("/assets/bg.jpeg");
+    background-repeat: none;
+    background-size: cover;
+    z-index: -2;
+
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    border-bottom: 5px solid rgb(75 85 99);
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+}
+
+.section {
+    @apply flex py-20 px-10 flex-col lg:flex-row items-center justify-center;
+    border-bottom: 5px solid rgb(75 85 99);
+}
+
+.section .text-group {
+    @apply w-96 text-center lg:text-left mb-4 lg:mb-0;
+}
+
+.section .text-group h2 {
+    @apply text-3xl lg:text-4xl mb-2 font-bold;
+}
+.section .text-group h3 {
+    @apply text-xl;
+}
